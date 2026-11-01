@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Health assessment | HEALTHVERSE AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="wrap">
+<nav class="top"><a class="logo" href="index.html">HEALTH<b>VERSE</b> AI</a><button class="btn" data-nav="exit">Save and exit</button></nav>
+<div id="demoBanner" class="demo" hidden>Demo mode: this is fictional sample data, not real health information.</div>
+<div class="stepper" id="stepper"></div><div class="bar"><i id="prog"></i></div><br>
+
+<section class="slide glass" id="s1"><h2>Personal health profile</h2>
+<p class="muted small">Fields marked * are required. Name, blood group, medications and allergies never leave your browser.</p>
+<div class="grid2"><div>
+<div class="field"><label>Full name</label><input data-k="name" autocomplete="off"></div>
+<div class="field"><label class="req">Age</label><input type="number" data-k="age" min="18" max="120"><small class="err" data-err="age"></small></div>
+<div class="field"><label class="req">Biological sex <span class="tip" tabindex="0" data-tip="Some screening scores use different cut-offs for men and women.">?</span></label>
+<select data-k="sex"><option value="">Select…</option><option value="male">Male</option><option value="female">Female</option><option value="undisclosed">Prefer not to say</option></select><small class="err" data-err="sex"></small></div>
+<div class="field"><label class="req">Height (cm)</label><input type="number" data-k="heightCm" min="50" max="272" step="0.5"><small class="err" data-err="heightCm"></small></div>
+<div class="field"><label class="req">Weight (kg)</label><input type="number" data-k="weightKg" min="10" max="500" step="0.1"><small class="err" data-err="weightKg"></small></div>
+</div><div>
+<div class="field"><label>Blood group (optional)</label><select data-k="bloodGroup"><option value="">Not sure</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+<div class="field"><span class="lab">Existing medical conditions</span><div class="chips">
+<button type="button" class="chip" data-g="conditions" data-v="diabetes">Diabetes</button><button type="button" class="chip" data-g="conditions" data-v="hypertension">High blood pressure</button>
+<button type="button" class="chip" data-g="conditions" data-v="asthma">Asthma</button><button type="button" class="chip" data-g="conditions" data-v="copd">COPD</button><button type="button" class="chip" data-g="conditions" data-v="heart_disease">Heart condition</button></div></div>
+<div class="field"><label>Parents with diabetes <span class="tip" tabindex="0" data-tip="Used by the Indian Diabetes Risk Score.">?</span></label>
+<select data-k="diabetesFamily"><option value="">Not sure / skip</option><option value="NONE">Neither parent</option><option value="ONE_PARENT">One parent</option><option value="BOTH_PARENTS">Both parents</option></select></div>
+<div class="field"><label><input type="checkbox" data-k="heartFamily"> Close relative had heart disease at a young age</label></div>
+<div class="field"><label>Current medications (optional)</label><input data-k="medications"></div>
+<div class="field"><label>Known allergies (optional)</label><input data-k="allergies"></div>
+</div></div></section>
+
+<section class="slide glass" id="s2"><h2>Lifestyle intelligence</h2>
+<div class="field"><span class="lab">Daily physical activity</span><div class="opts">
+<button type="button" class="opt" data-k="activityLevel" data-v="SEDENTARY">Mostly sitting<small>Desk job, little movement</small></button>
+<button type="button" class="opt" data-k="activityLevel" data-v="MODERATE">Moderately active<small>Regular walking or light work</small></button>
+<button type="button" class="opt" data-k="activityLevel" data-v="VIGOROUS">Very active<small>Regular exercise or physical work</small></button></div></div>
+<div class="grid2"><div>
+<div class="field"><label>Exercise days per week: <output data-o="exerciseDays"></output></label><input type="range" data-k="exerciseDays" min="0" max="7" step="1"></div>
+<div class="field"><label>Average sleep: <output data-o="sleepHours" data-unit=" h"></output></label><input type="range" data-k="sleepHours" min="3" max="12" step="0.5"></div>
+<div class="field"><label>Sleep quality (1 poor, 5 excellent): <output data-o="sleepQuality"></output></label><input type="range" data-k="sleepQuality" min="1" max="5" step="1"></div>
+<div class="field"><label>Daily water: <output data-o="waterLitres" data-unit=" L"></output></label><input type="range" data-k="waterLitres" min="0" max="6" step="0.25"></div>
+</div><div>
+<div class="field"><label>Dietary habits</label><select data-k="diet"><option value="BALANCED">Mostly balanced</option><option value="HIGH_PROCESSED">Lots of fried or processed food</option><option value="HIGH_SUGAR">Lots of sugary food and drinks</option><option value="LOW_VARIETY">Limited variety</option></select></div>
+<div class="field"><label>Tobacco</label><select data-k="tobacco"><option value="NEVER">Never</option><option value="FORMER">Used to</option><option value="CURRENT">Currently</option></select></div>
+<div class="field"><label>Alcohol</label><select data-k="alcohol"><option value="NONE">None</option><option value="OCCASIONAL">Occasionally</option><option value="FREQUENT">Frequently</option></select></div>
+<div class="field"><label>Stress level (1 calm, 10 extreme): <output data-o="stress"></output></label><input type="range" data-k="stress" min="1" max="10" step="1"></div>
+<div class="field"><label>Screen and sitting time: <output data-o="screenHours" data-unit=" h/day"></output></label><input type="range" data-k="screenHours" min="0" max="16" step="0.5"></div>
+</div></div></section>
+
+<section class="slide glass" id="s3"><h2>Body metrics and BMI</h2>
+<div class="grid2"><div>
+<div class="field"><label class="req">Height (cm)</label><input type="number" data-k="heightCm" min="50" max="272" step="0.5"></div>
+<div class="field"><label class="req">Weight (kg)</label><input type="number" data-k="weightKg" min="10" max="500" step="0.1"></div>
+<div class="field"><label>Waist circumference, cm (optional) <span class="tip" tabindex="0" data-tip="Measure around your belly button level. Needed for the diabetes risk score.">?</span></label><input type="number" data-k="waistCm" min="40" max="200"><small class="err" data-err="waistCm"></small></div>
+<div class="grid2"><div class="field"><label>Systolic BP (optional) <span class="tip" tabindex="0" data-tip="The top number of a blood pressure reading.">?</span></label><input type="number" data-k="systolic" min="70" max="250"><small class="err" data-err="systolic"></small></div>
+<div class="field"><label>Diastolic BP (optional)</label><input type="number" data-k="diastolic" min="40" max="150"><small class="err" data-err="diastolic"></small></div></div>
+</div><div id="bmiBox" style="text-align:center">
+<svg class="gauge" viewBox="0 0 200 120" id="gauge"></svg>
+<div class="big" id="bmiVal">--</div><div><b id="bmiCat">Enter height and weight</b></div>
+<p id="bmiTxt" class="muted"></p><p id="bmiRange"></p>
+<p class="small muted">BMI is a screening measure, not a full picture of health. It ignores muscle, age and fat distribution.</p></div></div></section>
+
+<section class="slide glass" id="s4"><h2>Symptoms and health signals</h2>
+<p class="muted small">A symptom alone does not point to a particular disease. Select everything that applies.</p>
+<div class="field"><input type="search" id="symSearch" placeholder="Search symptoms…" aria-label="Search symptoms"></div>
+<div class="sym" id="symGrid"></div>
+<div class="alert" id="emerg" hidden><b>Seek urgent medical help.</b> Chest pain, severe breathing difficulty or fainting can be serious. Call your local emergency number or go to the nearest hospital now.</div>
+<br><div class="grid3">
+<div class="field"><label>How long?</label><select data-k="duration"><option value="">Not applicable</option><option>Less than a week</option><option>1 to 4 weeks</option><option>1 to 3 months</option><option>More than 3 months</option></select></div>
+<div class="field"><label>How severe?</label><select data-k="severity"><option value="">Not applicable</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+<div class="field"><label>How often?</label><select data-k="frequency"><option value="">Not applicable</option><option>Rarely</option><option>Several times a week</option><option>Daily</option><option>Constant</option></select></div></div>
+<div class="field"><label>Recent changes or relevant history (optional)</label><textarea rows="2" data-k="recentChanges"></textarea></div></section>
+
+<section class="slide glass" id="s5"><h2>Health analysis engine</h2>
+<div id="runBox" style="text-align:center"><div class="pulse"></div><ul class="run" id="runList" style="padding:0;display:inline-block;text-align:left"></ul><div class="bar"><i id="runBar"></i></div></div>
+<div id="doneBox" hidden></div></section>
+
+<section class="slide glass" id="s6"><h2>Health risk insights</h2>
+<div id="snap"></div>
+<h3>Risk by category</h3><div class="grid3" id="riskCards"></div>
+<div class="grid2" style="margin-top:16px">
+<div class="glass"><h3>Category distribution</h3><div class="chartbox"><canvas id="cDonut"></canvas></div></div>
+<div class="glass"><h3>Risk level by category</h3><div class="chartbox"><canvas id="cBar"></canvas></div></div>
+<div class="glass" style="text-align:center"><h3>BMI indicator</h3><svg class="gauge" viewBox="0 0 200 120" id="gauge2"></svg><div class="big" id="bmi2"></div><div id="bmi2c"></div></div>
+<div class="glass"><h3>Lifestyle habits</h3><div class="chartbox"><canvas id="cRadar"></canvas></div><p class="small muted">Higher is better. This is a simple visual scale built from your answers, not a clinical score.</p></div>
+<div class="glass"><h3>Contributing factors per category</h3><div class="chartbox"><canvas id="cFact"></canvas></div></div></div>
+<h3 style="margin-top:20px">Personalised insights</h3><div id="insights"></div></section>
+
+<section class="slide glass" id="s7"><h2>Prevention and improvement plan</h2>
+<div id="planProg"></div><div id="goals"></div>
+<h3 style="margin-top:20px">What each concern means and what helps</h3><div id="recs"></div></section>
+
+<section class="slide glass" id="s8"><h2>Health snapshot and transparency report</h2>
+<div id="reportMeta" class="small muted"></div>
+<div class="nav" style="margin:10px 0 0"><div><button class="btn primary" id="pdfBtn">Download PDF report</button> <button class="btn saveBtn">Save this assessment</button></div></div>
+<div class="saveOut"></div><div id="reportBody"><p class="muted">Loading…</p></div></section>
+
+<div class="nav"><button class="btn" data-nav="prev" id="prevBtn">Previous</button><button class="btn primary" data-nav="next" id="nextBtn">Continue</button></div>
+<p class="small muted" style="margin-top:30px">Educational screening tool. Not a medical diagnosis.</p>
+</div><div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="js/config.js"></script><script src="js/app.js"></script></body></html>

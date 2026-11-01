@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HEALTHVERSE AI: understand your health risks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div class="wrap">
+<nav class="top"><a class="logo" href="index.html">HEALTH<b>VERSE</b> AI</a>
+<div><a class="btn" href="#history">My saved assessments</a> <a class="btn primary" href="assessment.html">Start assessment</a></div></nav>
+
+<header class="hero">
+<div>
+<h1>Find out which health habits deserve your attention first</h1>
+<p>Answer eight short stages about your body, lifestyle and symptoms. A Java engine checks your answers against screening rules and gives you a plain-language report with next steps.</p>
+<p><a class="btn primary" id="startBtn" href="assessment.html">Start your health assessment</a>
+<a class="btn" href="assessment.html?demo=1">Explore with demo data</a>
+<a class="btn" id="resumeBtn" href="assessment.html" hidden>Resume your draft</a></p>
+<p class="small">Educational screening tool. It cannot diagnose disease.</p>
+</div>
+<div class="glass" aria-hidden="true">
+<svg class="ecg" viewBox="0 0 400 160"><path d="M0 90 H70 L90 90 L105 40 L125 140 L145 20 L160 90 H230 L245 75 L260 90 H330 L345 55 L360 90 H400"/></svg>
+<div class="muted small" style="text-align:center">Your answers go through six separate Java assessors</div>
+</div></header>
+
+<section class="block"><h2>What you get</h2><div class="grid3">
+<div class="glass"><h3>Six risk indicators</h3><p class="muted">Heart, diabetes, respiratory, sleep, stress and nutrition, each rated Low, Moderate or High with the exact factors behind it.</p></div>
+<div class="glass"><h3>A real screening score</h3><p class="muted">Diabetes risk uses the Indian Diabetes Risk Score when your answers allow it. Otherwise you are told it could not be calculated.</p></div>
+<div class="glass"><h3>Advice tied to your answers</h3><p class="muted">Daily and weekly goals appear only for the problems found in your own results.</p></div>
+<div class="glass"><h3>Live BMI gauge</h3><p class="muted">BMI is calculated by the Java server as you type, with your healthy weight range.</p></div>
+<div class="glass"><h3>Symptom awareness</h3><p class="muted">Pick symptoms without being told you have a disease. Serious warning signs show an urgent-care message.</p></div>
+<div class="glass"><h3>Saved reports</h3><p class="muted">Save an assessment and reopen it later with a private access code.</p></div></div></section>
+
+<section class="block"><h2>How it works</h2><div class="glass"><ol class="steps">
+<li><b>Profile:</b> age, sex, height, weight, conditions, family history</li>
+<li><b>Lifestyle:</b> activity, sleep, diet, water, tobacco, alcohol, stress</li>
+<li><b>Body metrics:</b> live BMI gauge, waist and blood pressure</li>
+<li><b>Symptoms:</b> choose what applies and how long, how severe</li>
+<li><b>Analysis:</b> the Java engine runs six assessors</li>
+<li><b>Insights, plan and report:</b> results dashboard, action plan, PDF</li></ol></div></section>
+
+<section class="block"><h2>Privacy and safety</h2><div class="grid2">
+<div class="glass"><h3>Your data</h3><p class="muted">No account is needed. Your name, medications and allergies stay in your browser. Saved assessments are protected by a random access code and can be deleted any time.</p></div>
+<div class="glass"><h3>Limits you should know</h3><p class="muted">Results are screening indicators, not diagnoses or predictions. If you have chest pain, severe breathlessness or fainting, get medical help now. This demo is not a certified medical or privacy-compliant service.</p></div></div></section>
+
+<section class="block" id="history"><h2>My saved assessments</h2><div class="glass" id="histBox"><p class="muted">Loading…</p></div></section>
+<footer>HEALTHVERSE AI is a college project for health awareness. It does not provide medical advice.</footer>
+</div>
+<script src="js/config.js"></script><script src="js/landing.js"></script></body></html>

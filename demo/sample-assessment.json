@@ -1,0 +1,9 @@
+{
+  
+  "age": 52, "sex": "male", "heightCm": 170, "weightKg": 82, "waistCm": 102,
+  "systolic": 138, "diastolic": 88, "conditions": ["hypertension"],
+  "diabetesFamily": "ONE_PARENT", "heartFamily": true, "activityLevel": "SEDENTARY",
+  "sleepHours": 5.5, "sleepQuality": 2, "diet": "HIGH_PROCESSED", "waterLitres": 1.2,
+  "tobacco": "FORMER", "alcohol": "OCCASIONAL", "stress": 7, "screenHours": 9,
+  "symptoms": ["fatigue", "frequent_thirst"]
+}
